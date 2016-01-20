@@ -5,10 +5,14 @@
 	<title>Done Digital</title>
 	<style>
 
+		* {
+			transition: .3s ease all;
+		}
+
 		ul {
 			list-style: none;
 		}
-		
+
 		h1{
 			font-family: arial;
 			font-size: 5em;
@@ -28,9 +32,19 @@
 		}
 		
 		#starWarsWrapper{
-			position: absolute;
-			width: 100%;
+			position: relative;
+			width: 800px;
+			margin: 0 auto;
 
+		}
+
+		a { 
+			color: white;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color:#FFFF7D;
 		}
 
 	</style>
@@ -40,7 +54,13 @@
 <aside>
 
 	<ul >
-		<h4><li ng-repeat="item in items">{{item.name}}</li></h4>
+		<h4>
+			<li ng-repeat="item in items">
+				<a ng-href="#">{{item.name}}</a>
+
+				
+			</li>
+		</h4>
 	</ul>
 
 	<div class="items">
