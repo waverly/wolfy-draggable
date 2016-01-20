@@ -17,7 +17,7 @@ window.onload = init();
 function moveYaAss (){
 	var elem = document.getElementById("starWarsWrapper");
 	var pos = 0;
-	var id = setInterval(frame,5);
+	var id = setInterval(frame,50);
 	function frame() {
 
 			pos++;
