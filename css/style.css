@@ -48,15 +48,16 @@ html {
         html body .monument-wrapper .monument-menu .img-wrapper {
           margin: 0 6rem;
           display: flex;
-          align-items: center;
           flex-direction: row;
           flex-wrap: nowrap;
           overflow: scroll;
-          height: 10rem; }
+          height: 10rem;
+          min-width: 100%;
+          width: -webkit-min-content; }
           html body .monument-wrapper .monument-menu .img-wrapper .item {
             margin: 1rem;
             width: 150px;
-            height: 150px;
+            height: calc(100% - 2rem);
             background-color: blue;
             display: flex; }
             html body .monument-wrapper .monument-menu .img-wrapper .item img {
