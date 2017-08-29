@@ -1,12 +1,9 @@
+// toggle menu icon
+function menuToggle(x) {
+  x.classList.toggle("change");
+}
+
 window.onload = function(e){
-
-  console.log('shit has loaded');
-
-  // $( function() {
-  //   $( ".canvas-monument" ).draggable().resizable({aspectRatio: true, handles: {'s': '#handle'}},);
-  //   // $(".canvas-monument img").resizable({aspectRatio: true});
-  // } );
-
 
   const canvas = document.querySelector('.canvas-area');
 
