@@ -37,7 +37,7 @@ $( document ).ready(function() {
   const mainNavImg = document.querySelectorAll('.main-nav-img');
   mainNavImg.forEach(img => img.addEventListener('click', function(){
       const subNav = img.previousElementSibling;
-      subNav.classList.toggle('display-block');
+      subNav.classList.toggle('display-block-test');
       setTimeout(()=>{
         subNav.classList.toggle('display');
       }, 500);
@@ -49,7 +49,8 @@ $( document ).ready(function() {
   const subNav = document.querySelectorAll('.sub-menu');
   subNavImg.forEach(img => img.addEventListener('click', () => {
     console.log('gotta close dis');
-    img.parentElement.parentElement.classList.toggle('display-block2');
+    img.parentElement.parentElement.classList.toggle('display');
+    img.parentElement.parentElement.classList.toggle('display-block-test');
   }));
 
   // params for jquery-ui-rotatable
@@ -103,7 +104,6 @@ $( document ).ready(function() {
         console.log(removeDiv);
         // console.log(removeDiv.parentNode);
         removeDiv.addEventListener('click', function(){this.parentNode.remove();});
-
       });
 
     }
@@ -115,7 +115,6 @@ $( document ).ready(function() {
 
       const divRemove = this.querySelector('.remove');
       divRemove.classList.toggle('display-none');
-
     }
 
     // remove item on click of divRemove
@@ -123,12 +122,9 @@ $( document ).ready(function() {
       console.log(this);
     }
 
-
     // on click of one of the menu items, create a new element and append it to the main section of thebody
     const monumentItem = Array.from(document.querySelectorAll('.sub-menu li img'));
 
     // when you click on an item, run a fx that gets its src and console logs
     const monumentSrc = monumentItem.forEach(item => item.addEventListener('click', monumentItemClick));
-
-
 });

@@ -95,7 +95,7 @@ html {
               transition: .5s opacity; }
             html body .monument-wrapper .monument-menu ul.img-wrapper li.item ul.sub-menu.display-block {
               display: block; }
-            html body .monument-wrapper .monument-menu ul.img-wrapper li.item ul.sub-menu.display-block2 {
+            html body .monument-wrapper .monument-menu ul.img-wrapper li.item ul.sub-menu.display-block-test {
               display: block; }
         html body .monument-wrapper .monument-menu .scroll-icon {
           padding: 0 2rem;
