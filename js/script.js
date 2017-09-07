@@ -49,7 +49,7 @@ $( document ).ready(function() {
   const subNav = document.querySelectorAll('.sub-menu');
   subNavImg.forEach(img => img.addEventListener('click', () => {
     console.log('gotta close dis');
-    img.parentElement.parentElement.classList.toggle('display-block');
+    img.parentElement.parentElement.classList.toggle('display-block2');
   }));
 
   // params for jquery-ui-rotatable
@@ -66,9 +66,6 @@ $( document ).ready(function() {
             console.log("Rotating stopped")
         },
   };
-
-
-
 
     const canvas = document.querySelector('.canvas-area');
     let canvasMonument = []
