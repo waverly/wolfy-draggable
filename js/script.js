@@ -54,15 +54,29 @@ $( document ).ready(function() {
     const subNavImg =  document.querySelectorAll('.sub-menu img');
     const subNav = document.querySelectorAll('.sub-menu');
     subNavImg.forEach(img => img.addEventListener('click', () => {
-      console.log('up in dis bis');
-      console.log(img.parentElement);
       img.parentElement.parentElement.classList.toggle('display-block');
     }))
+
+
+    const params = {
+          start: function(event, ui) {
+              console.log("Rotating started")
+          },
+          rotate: function(event, ui) {
+              if (Math.abs(ui.angle.current > 6)) {
+                console.log("Rotating " + ui.angle.current)
+              }
+          },
+          stop: function(event, ui) {
+              console.log("Rotating stopped")
+          },
+      };
 
 
 
 
     const canvas = document.querySelector('.canvas-area');
+    let canvasMonument = []
 
     // write fx that gets menu item src and appends new item
     function monumentItemClick(){
@@ -74,21 +88,55 @@ $( document ).ready(function() {
       child.className += 'ui-resizable-handle';
       child.className += " " + 'ui-resizable-s';
 
+      // create div with remove className
+      divRemove = document.createElement('div');
+      divRemove.className = "remove";
+
       // create new div
       const divEl = document.createElement('div');
       divEl.className += "canvas-monument";
       divEl.appendChild(child);
       divEl.appendChild(newEl);
-      $(divEl).draggable().resizable({aspectRatio: true, handles: {'s': '#handle'}},);
+      divEl.appendChild(divRemove);
+      $(divEl).draggable().resizable({aspectRatio: true, handles: {'s': '#handle'}},).rotatable();
       canvas.appendChild(divEl);
 
+      // push new monument to the array of items currently on the canvas
+      canvasMonument.push(divEl);
+      console.log(canvasMonument);
+      canvasMonument.forEach(img => {
+        img.addEventListener('click', showRotate);
+
+        const removeDiv = img.querySelector('.remove');
+        console.log(removeDiv);
+        // console.log(removeDiv.parentNode);
+        removeDiv.addEventListener('click', function(){this.parentNode.remove();});
+
+      });
 
     }
+    // end of monumetItem fx
+
+    function showRotate(){
+      const draggableDiv = this.querySelector('.ui-draggable');
+      draggableDiv.classList.toggle('ui-rotatable-handle');
+
+      const divRemove = this.querySelector('.remove');
+      divRemove.classList.toggle('display-none');
+
+    }
+
+    // remove item on click of divRemove
+    function clearItem(){
+      console.log(this);
+    }
+
 
     // on click of one of the menu items, create a new element and append it to the main section of thebody
     const monumentItem = Array.from(document.querySelectorAll('.sub-menu li img'));
 
     // when you click on an item, run a fx that gets its src and console logs
     const monumentSrc = monumentItem.forEach(item => item.addEventListener('click', monumentItemClick));
+
 
 });

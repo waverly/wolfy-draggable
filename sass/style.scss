@@ -106,6 +106,8 @@ html{
               display: none;
               li{
                 padding: 25px;
+                padding-top: 5px;
+                padding-bottom: 5px;
                 -webkit-padding-start: 0px;
               }
             }
@@ -174,3 +176,20 @@ html{
 }
 
   #resizable { width: 150px; height: 150px; padding: 0.5em; }
+
+  .remove{
+    background-image: url(../img/x.png);
+    background-image: url(../img/x.png);
+    width: 13px;
+    height: 18px;
+    top: 0;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    float: right;
+    display: block;
+  }
+
+  .display-none{
+    display: none;
+  }
