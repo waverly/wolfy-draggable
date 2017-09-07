@@ -7,6 +7,7 @@ $( document ).ready(function() {
   const bg = document.querySelector('html');
   let counter = 0;
 
+  // swap out background environments on icon click
   document.querySelector('.enviro').addEventListener('click', function(){
     if (counter < (enviroArray.length - 1)){
       counter ++;
@@ -19,56 +20,52 @@ $( document ).ready(function() {
   });
 
 
+  // rotate nav icon into active state on click
+  document.querySelector('.menu-icon').addEventListener('click', function() {
+      this.classList.toggle("change");
+  });
 
+  // display monument nav when menu icon has been clicked
+  document.querySelector('.menu-icon').addEventListener('click', menuToggle);
 
-    // toggle menu icon on click
-    ( document.querySelector('.menu-icon')).addEventListener('click', function() {
-        this.classList.toggle("change");
-      });
+  const imgWrap = document.querySelector('.img-wrapper');
+  function menuToggle(){
+    imgWrap.classList.toggle('opacity');
+  }
 
+  // toggle sub-menu on main-nav-img click
+  const mainNavImg = document.querySelectorAll('.main-nav-img');
+  mainNavImg.forEach(img => img.addEventListener('click', function(){
+      const subNav = img.previousElementSibling;
+      subNav.classList.toggle('display-block');
+      setTimeout(()=>{
+        subNav.classList.toggle('display');
+      }, 500);
+    })
+  );
 
+  // toggle subnav on subnav img click
+  const subNavImg =  document.querySelectorAll('.sub-menu img');
+  const subNav = document.querySelectorAll('.sub-menu');
+  subNavImg.forEach(img => img.addEventListener('click', () => {
+    console.log('gotta close dis');
+    img.parentElement.parentElement.classList.toggle('display-block');
+  }));
 
-
-    // display monument Nav when menu icon has been clicked
-    document.querySelector('.menu-icon').addEventListener('click', menuToggle);
-    const imgWrap = document.querySelector('.img-wrapper');
-
-    function menuToggle(){
-      imgWrap.classList.toggle('opacity');
-    }
-
-    // toggle sub-menu on main-nav-img click
-    const mainNavImg = document.querySelectorAll('.main-nav-img');
-    mainNavImg.forEach(img => img.addEventListener('click', function(){
-        const subNav = img.previousElementSibling;
-        subNav.classList.toggle('display-block');
-        setTimeout(()=>{
-          subNav.classList.toggle('display');
-        }, 500);
-      })
-    );
-
-    // toggle subnav on subnav img click
-    const subNavImg =  document.querySelectorAll('.sub-menu img');
-    const subNav = document.querySelectorAll('.sub-menu');
-    subNavImg.forEach(img => img.addEventListener('click', () => {
-      img.parentElement.parentElement.classList.toggle('display-block');
-    }))
-
-
-    const params = {
-          start: function(event, ui) {
-              console.log("Rotating started")
-          },
-          rotate: function(event, ui) {
-              if (Math.abs(ui.angle.current > 6)) {
-                console.log("Rotating " + ui.angle.current)
-              }
-          },
-          stop: function(event, ui) {
-              console.log("Rotating stopped")
-          },
-      };
+  // params for jquery-ui-rotatable
+  const params = {
+        start: function(event, ui) {
+            console.log("Rotating started")
+        },
+        rotate: function(event, ui) {
+            if (Math.abs(ui.angle.current > 6)) {
+              console.log("Rotating " + ui.angle.current)
+            }
+        },
+        stop: function(event, ui) {
+            console.log("Rotating stopped")
+        },
+  };
 
 
 
