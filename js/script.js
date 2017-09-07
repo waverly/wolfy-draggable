@@ -45,7 +45,7 @@ $( document ).ready(function() {
   );
 
   // toggle subnav on subnav img click
-  const subNavImg =  document.querySelectorAll('.sub-menu img');
+  const subNavImg =  document.querySelectorAll('.sub-menu > li > img');
   const subNav = document.querySelectorAll('.sub-menu');
   subNavImg.forEach(img => img.addEventListener('click', () => {
     console.log('gotta close dis');
