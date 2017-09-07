@@ -36,6 +36,7 @@ $( document ).ready(function() {
   // toggle sub-menu on main-nav-img click
   const mainNavImg = document.querySelectorAll('.main-nav-img');
   mainNavImg.forEach(img => img.addEventListener('click', function(){
+    console.log('toggling');
       const subNav = img.previousElementSibling;
       subNav.classList.toggle('display-block-test');
       setTimeout(()=>{
