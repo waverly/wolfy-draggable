@@ -1,9 +1,13 @@
 html{
-  background: url(../img/environment1.jpg) no-repeat center center fixed;
+  background: url(../img/environments/bg1.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover!important;
+
+  img.draggable-monument{
+    width: 150px;
+  }
   body{
     font-size: 14px;
     margin: 0;
@@ -16,6 +20,9 @@ html{
       padding: 1rem;
       height: 4rem;
       width: 4rem;
+      z-index: 1000;
+      position: absolute;
+      right: 1rem;
       img{
         width: 100%;
       }
@@ -93,11 +100,19 @@ html{
               width: 100%;
             }
             ul.sub-menu{
+              opacity: 0;
+              transition: transform 1s, opacity .5s;
+              TRANSFORM: translateY(1000PX);
               display: none;
               li{
                 padding: 25px;
                 -webkit-padding-start: 0px;
               }
+            }
+            ul.sub-menu.display{
+              transform: translateY(0px);
+              opacity: 1;
+              transition: .5s opacity;
             }
             ul.sub-menu.display-block{
               display: block;
@@ -159,7 +174,3 @@ html{
 }
 
   #resizable { width: 150px; height: 150px; padding: 0.5em; }
-
-img.draggable-monument{
-  width: 150px;
-}

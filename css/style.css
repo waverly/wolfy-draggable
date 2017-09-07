@@ -1,9 +1,11 @@
 html {
-  background: url(../img/environment1.jpg) no-repeat center center fixed;
+  background: url(../img/environments/bg1.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover !important; }
+  html img.draggable-monument {
+    width: 150px; }
   html body {
     font-size: 14px;
     margin: 0; }
@@ -14,7 +16,10 @@ html {
       top: 1rem;
       padding: 1rem;
       height: 4rem;
-      width: 4rem; }
+      width: 4rem;
+      z-index: 1000;
+      position: absolute;
+      right: 1rem; }
       html body .enviro img {
         width: 100%; }
     html body .monument-wrapper {
@@ -75,10 +80,17 @@ html {
             html body .monument-wrapper .monument-menu ul.img-wrapper li.item img {
               width: 100%; }
             html body .monument-wrapper .monument-menu ul.img-wrapper li.item ul.sub-menu {
+              opacity: 0;
+              transition: transform 1s, opacity .5s;
+              TRANSFORM: translateY(1000PX);
               display: none; }
               html body .monument-wrapper .monument-menu ul.img-wrapper li.item ul.sub-menu li {
                 padding: 25px;
                 -webkit-padding-start: 0px; }
+            html body .monument-wrapper .monument-menu ul.img-wrapper li.item ul.sub-menu.display {
+              transform: translateY(0px);
+              opacity: 1;
+              transition: .5s opacity; }
             html body .monument-wrapper .monument-menu ul.img-wrapper li.item ul.sub-menu.display-block {
               display: block; }
         html body .monument-wrapper .monument-menu .scroll-icon {
@@ -127,8 +139,5 @@ html {
   width: 150px;
   height: 150px;
   padding: 0.5em; }
-
-img.draggable-monument {
-  width: 150px; }
 
 /*# sourceMappingURL=style.css.map */

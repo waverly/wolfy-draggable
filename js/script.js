@@ -1,11 +1,14 @@
 $( document ).ready(function() {
 
   // create array of img for environment
-  const enviroArray = ['./img/environments/environment1.jpg', './img/environments/environment2.jpg', './img/environments/environment3.jpg']
+  const enviroArray = ['/img/environments/bg1.jpg', './img/environments/bg2.jpg', './img/environments/bg3.jpg',
+  './img/environments/bg4.jpg', './img/environments/bg5.jpg', './img/environments/bg6.jpg', './img/environments/bg7.jpg',
+  './img/environments/bg8.jpg', './img/environments/bg9.jpg', './img/environments/bg10.jpg', './img/environments/bg11.jpg', './img/environments/bg12.jpg']
   const bg = document.querySelector('html');
   let counter = 0;
 
   document.querySelector('.enviro').addEventListener('click', function(){
+    console.log('click');
     if (counter < (enviroArray.length - 1)){
       counter ++;
       bg.style.background = "url(" + enviroArray[counter] + ") no-repeat center center fixed";
@@ -41,6 +44,9 @@ $( document ).ready(function() {
     mainNavImg.forEach(img => img.addEventListener('click', function(){
         const subNav = img.previousElementSibling;
         subNav.classList.toggle('display-block');
+        setTimeout(()=>{
+          subNav.classList.toggle('display');
+        }, 500);
       })
     );
 
