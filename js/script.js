@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
   // create array of img for environment
-  const enviroArray = ['/img/environments/bg1.jpg', './img/environments/bg2.jpg', './img/environments/bg3.jpg',
-  './img/environments/bg4.jpg', './img/environments/bg5.jpg', './img/environments/bg6.jpg', './img/environments/bg7.jpg',
-  './img/environments/bg8.jpg', './img/environments/bg9.jpg', './img/environments/bg10.jpg', './img/environments/bg11.jpg', './img/environments/bg12.jpg']
+  const enviroArray = ['/img/environments/bg1.jpg', '/img/environments/bg2.jpg', '/img/environments/bg3.jpg',
+  '/img/environments/bg4.jpg', '/img/environments/bg5jpg', '/img/environments/bg6jpg', '/img/environments/bg7jpg',
+  '/img/environments/bg8jpg', '/img/environments/bg9jpg', '/img/environments/bg10jpg', '/img/environments/bg11jpg', '/img/environments/bg12.jpg']
   const bg = document.querySelector('html');
   let counter = 0;
 
